@@ -17,6 +17,8 @@ public class ProjectMCC {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Gabriel Bintang Timur");
+        System.out.println("Bayu Permana Sejati");
+        System.out.println("Bayu Permana Sejati 01");
     }
     
 }
