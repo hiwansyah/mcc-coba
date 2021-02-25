@@ -18,6 +18,7 @@ public class ProjectMCC {
         // TODO code application logic here
         System.out.println("Gabriel Bintang Timur");
         System.out.println("Bayu Permana Sejati");
+        System.out.println("Bayu Permana Sejati 01");
     }
     
 }
