@@ -25,5 +25,11 @@ public class employeeService implements employeeServiceInterface {
     public Iterable<Employees> getAll() {
         return r.findAll();
     }
+    
+    public String bintang(){
+        
+        return null;
+        
+    }
 
 }
