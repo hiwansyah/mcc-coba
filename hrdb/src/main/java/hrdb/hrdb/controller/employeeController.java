@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -26,13 +27,6 @@ public class employeeController {
 
     @GetMapping("/thisisHome")
     public String home() {
-        System.out.println("Running Index");
-        System.out.println("Running Index");
-        System.out.println("Running Index");
-        System.out.println("Running Index");
-        System.out.println("Running Index");
-        System.out.println("Running Index");
-        System.out.println("Running Index");
         System.out.println("Running Index");
         System.out.println("Running Index");
         return "index";
@@ -50,7 +44,50 @@ public class employeeController {
             System.out.println("employees phone number = " + employeList.getPhoneNumber());
 
         }
-        return "index";
+        model.addAttribute("employeList", employees);
+        return "view/viewAllEmployee";
     }
 
+    @RequestMapping(value = "/searchPageEmployee", method = RequestMethod.GET)
+    public String searchEmployeeByFirstname() {
+        return "view/searchPageFirstname";
+    }
+
+    @RequestMapping(value = "/selectByName", method = RequestMethod.POST)
+    public String selectByName(Model model,
+            @RequestParam(value = "firstname", required = false) String nama) {
+        
+        Iterable<Employees> employees = servisnyaEmployee.searchByFirstName(nama);
+
+        model.addAttribute("listEmployee", employees);
+        return "view/viewSearchFirstname";
+    }
+    
+    
+    /*
+    Spring Security inisialisasi 
+    username : user
+    password : sesuai random di console
+    */
+    @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
+    public String loginPage() {
+        return "login";
+    }
+    
+    @RequestMapping(value = "/manager", method = RequestMethod.GET)
+    public String homemanager() {
+        
+        System.out.println("homemanager");
+        return "index";
+    }
+    @RequestMapping(value = "/employee", method = RequestMethod.GET)
+    public String homeemployee() {
+        System.out.println("homeemployee");
+        
+        return "index";
+    }
+    
+    
+
+    
 }

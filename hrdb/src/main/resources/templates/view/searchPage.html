@@ -1,0 +1,20 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Search</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form id="addNewActor" th:action="@{/search}" method="POST">
+            <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 col-form-label">ID Aktor :</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="id" value="" placeholder="Masukan ID Aktor">
+                </div>
+            </div>
+            <div class="col-12 text-right pr-5">
+                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Search</button>
+            </div>
+        </form>
+    </body>
+</html>

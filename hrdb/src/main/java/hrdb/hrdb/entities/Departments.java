@@ -45,7 +45,7 @@ public class Departments implements Serializable {
     @Column(name = "department_id")
     private Integer departmentId;
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "department_name")
     private String departmentName;

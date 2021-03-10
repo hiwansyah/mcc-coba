@@ -25,11 +25,10 @@ public class employeeService implements employeeServiceInterface {
     public Iterable<Employees> getAll() {
         return r.findAll();
     }
-    
-    public String bintang(){
-        
-        return null;
-        
+
+    @Override
+    public Iterable<Employees> searchByFirstName(String firstname) {
+        return r.searchByName(firstname);
     }
 
 }

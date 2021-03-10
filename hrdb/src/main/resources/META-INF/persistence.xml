@@ -9,6 +9,9 @@
     <class>hrdb.hrdb.entities.Dependents</class>
     <class>hrdb.hrdb.entities.Locations</class>
     <class>hrdb.hrdb.entities.Employees</class>
+    <class>hrdb.hrdb.entities.Role</class>
+    <class>hrdb.hrdb.entities.User</class>
+    <class>hrdb.hrdb.entities.Userhr</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hrdb?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

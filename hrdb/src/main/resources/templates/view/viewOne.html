@@ -1,0 +1,21 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Aktor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="form-group row">
+            <label class="col-md-4 label-request">ID :</label>
+            <span class="col-md-7" th:text="${id}"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 label-request">First Name :</label>
+            <span class="col-md-7" th:text="${fn}"></span>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 label-request">Last Name :</label>
+            <span class="col-md-7" th:text="${ln}"></span>
+        </div>
+    </body>
+</html>

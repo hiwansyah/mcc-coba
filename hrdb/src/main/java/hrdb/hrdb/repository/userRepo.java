@@ -5,7 +5,8 @@
  */
 package hrdb.hrdb.repository;
 
-import hrdb.hrdb.entities.Employees;
+
+import hrdb.hrdb.entities.Userhr;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -15,9 +16,9 @@ import org.springframework.stereotype.Repository;
  * @author gabri
  */
 @Repository
-public interface employeeRepository extends CrudRepository<Employees, Integer>{
+public interface userRepo extends CrudRepository<Userhr, Integer> {
     
-    @Query(value = "SELECT * FROM employees WHERE first_name like %?1%", nativeQuery = true)
-    public Iterable<Employees> searchByName(String keyword);
+    @Query(value = "SELECT * FROM userhr WHERE username = ?1", nativeQuery = true)
+    public Userhr findUserByEmail(String email);
     
 }

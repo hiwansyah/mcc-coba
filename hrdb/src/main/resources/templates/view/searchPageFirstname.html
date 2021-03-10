@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Home</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <title>Search</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             html, body {
                 display: flex;
@@ -76,34 +74,14 @@
                 background: #d34836;
             }
         </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="main-block">
-            <div class="block-item left">
-                <h1>CRUD Repository:</h1>
-                <p><small>CrudRepository implements basic CRUD operations, including count, delete, deleteById, save, saveAll, findById, and findAll.</small>
-                </p>
-            </div>
-            <div class="block-item right">
-                <a th:href="@{/getAllEmployee}">
-                    <button class="btn facebook"><span>Get All Employee</span></button>
-                </a>
-<!--                <a th:href="@{/findByID}">
-                    <button class="btn facebook"><span>Find One</span></button>
-                </a>
-                <a th:href="@{/shark}">
-                    <button class="btn facebook"><span>Get Shark & Crocodile</span></button>
-                </a>
-                <a th:href="@{/addActor}">
-                    <button class="btn facebook"><span>Add New Actor</span></button>
-                </a>
-                <a th:href="@{/searchPage}">
-                    <button class="btn facebook"><span>Search Actor</span></button>
-                </a>-->
-                <a th:href="@{/searchPageEmployee}">
-                    <button class="btn facebook"><span>Search Employee by First Name</span></button>
-                </a>
-            </div>
-        </div>
+        <form id="searchEmployee" th:action="@{/selectByName}" method="POST">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <input type="submit" value="Submit">
+        </form>
     </body>
 </html>
