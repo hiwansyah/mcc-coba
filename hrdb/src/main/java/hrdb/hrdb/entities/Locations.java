@@ -54,7 +54,7 @@ public class Locations implements Serializable {
     @Column(name = "postal_code")
     private String postalCode;
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "city")
     private String city;

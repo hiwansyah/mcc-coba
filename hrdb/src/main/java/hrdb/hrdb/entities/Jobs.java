@@ -47,7 +47,7 @@ public class Jobs implements Serializable {
     @Column(name = "job_id")
     private Integer jobId;
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Size(min = 1, max = 35)
     @Column(name = "job_title")
     private String jobTitle;

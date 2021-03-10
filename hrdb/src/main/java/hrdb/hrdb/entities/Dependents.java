@@ -44,7 +44,7 @@ public class Dependents implements Serializable {
     @Column(name = "dependent_id")
     private Integer dependentId;
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "first_name")
     private String firstName;
@@ -54,7 +54,7 @@ public class Dependents implements Serializable {
     @Column(name = "last_name")
     private String lastName;
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Size(min = 1, max = 25)
     @Column(name = "relationship")
     private String relationship;

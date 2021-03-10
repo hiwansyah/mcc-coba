@@ -1,0 +1,55 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>List Aktor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #listActor {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #listActor td, #listActor th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #listActor tr:nth-child(even){background-color: #f2f2f2;}
+
+            #listActor tr:hover {background-color: #ddd;}
+
+            #listActor th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table id="listActor">
+                <thead class="text-center">
+                    <tr>
+                        <th>Nomor</th>
+                        <th hidden="">ID</th>
+                        <th>Employee First Name</th>
+                        <th>Employee Last Name</th>
+                        <th>Employee Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr th:each="h,iter:${listEmployee}">
+                        <td class="text-center" th:text="${iter.count}" ></td>
+                        <td th:text="${h.employeeId}" hidden=""></td>
+                        <td th:text="${h.firstName}"></td>
+                        <td th:text="${h.lastName}"></td>
+                        <td th:text="${h.phoneNumber}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

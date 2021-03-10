@@ -58,27 +58,27 @@ public class Employees implements Serializable {
     @Column(name = "first_name")
     private String firstName;
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Size(min = 1, max = 25)
     @Column(name = "last_name")
     private String lastName;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
-//    @NotNull
-    @Size(min = 1, max = 100)
+    @NotNull
+    @Size(min = 1, max = 60)
     @Column(name = "email")
     private String email;
     @Size(max = 20)
     @Column(name = "phone_number")
     private String phoneNumber;
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Column(name = "hire_date")
     @Temporal(TemporalType.DATE)
     private Date hireDate;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Column(name = "salary")
     private BigDecimal salary;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "employeeId", fetch = FetchType.LAZY)
@@ -94,6 +94,8 @@ public class Employees implements Serializable {
     @JoinColumn(name = "manager_id", referencedColumnName = "employee_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Employees managerId;
+    @OneToMany(mappedBy = "username", fetch = FetchType.LAZY)
+    private List<Userhr> userhrList;
 
     public Employees() {
     }
@@ -206,6 +208,15 @@ public class Employees implements Serializable {
 
     public void setManagerId(Employees managerId) {
         this.managerId = managerId;
+    }
+
+    @XmlTransient
+    public List<Userhr> getUserhrList() {
+        return userhrList;
+    }
+
+    public void setUserhrList(List<Userhr> userhrList) {
+        this.userhrList = userhrList;
     }
 
     @Override

@@ -40,7 +40,7 @@ public class Countries implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-//    @NotNull
+    @NotNull
     @Size(min = 1, max = 2)
     @Column(name = "country_id")
     private String countryId;

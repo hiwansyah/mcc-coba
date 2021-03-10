@@ -5,17 +5,13 @@
  */
 package hrdb.hrdb.serviceinterface;
 
-import hrdb.hrdb.entities.Employees;
+import hrdb.hrdb.entities.Userhr;
 
 /**
  *
  * @author gabri
  */
-
-public interface employeeServiceInterface {
-    
-    Iterable<Employees> getAll();
-    
-    Iterable<Employees> searchByFirstName(String firstname);
+public interface UserServiceInterface {
+    Userhr findUserByEmail(String email);
     
 }
